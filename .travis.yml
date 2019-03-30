@@ -11,9 +11,7 @@ services:
 
 before_install:
   - docker build -t allansilva/kafka4dev:1.0.2-scala.2.12 .
-  - docker run -d -p 127.0.0.1:9092:9092 -p 127.0.0.1:2181:9092 allansilva/kafka4dev:1.0.2-scala.2.12
-
-install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -f tests/pom.xml
+  - docker run -d -p 127.0.0.1:9092:9092 -p 127.0.0.1:2181:2181 allansilva/kafka4dev:1.0.2-scala.2.12
 
 script: mvn test -B -f tests/pom.xml
 
