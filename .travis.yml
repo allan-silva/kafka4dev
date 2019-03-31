@@ -2,6 +2,9 @@ language: java
 jdk:
   - oraclejdk8
 
+ignore:
+  - *.md
+
 cache:
   directories:
   - ~/.m2/repository
