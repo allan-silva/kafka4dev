@@ -10,8 +10,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t allansilva/kafka4dev:2.2.0-scala.2.12 .
-  - docker run -d -p 127.0.0.1:9092:9092 -p 127.0.0.1:2181:2181 allansilva/kafka4dev:2.2.0-scala.2.12
+  - docker build -t allansilva/kafka4dev:latest .
+  - docker run -d -p 127.0.0.1:9092:9092 -p 127.0.0.1:2181:2181 allansilva/kafka4dev:latest
 
 script: mvn test -B -f tests/pom.xml
 
@@ -19,4 +19,4 @@ deploy:
   provider: script
   script: bash docker_push
   on:
-    branch: 2.2.0-scala.2.12
+    branch: master
